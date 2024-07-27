@@ -26,8 +26,61 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width: 640px) {
+  main {
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Ensure header takes up full width */
+header {
+  width: 100%;
+}
+
+/* Adjust navigation to flex and handle responsiveness */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Make sure logo has appropriate padding */
+.logo-img {
+  padding-right: 16px; /* Adjust padding as needed */
+}
+
+/* Responsive design for navigation */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* Hide navigation on mobile initially */
+  }
+
+  nav ul.is-menu-open {
+    display: block; /* Show navigation when menu is open */
+  }
+
+  /* Adjust the mobile menu button positioning */
+  nav button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* Styling for desktop navigation */
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px; /* Adjust gap between items */
   }
 }
