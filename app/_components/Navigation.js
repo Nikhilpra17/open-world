@@ -14,7 +14,7 @@ export default function Navigation() {
     <nav className="relative z-10 text-xl bg-primary-950">
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden absolute top-4 right-4 p-2 text-white"
+        className="absolute top-4 right-4 p-2 text-white bg-black md:bg-transparent md:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <svg
@@ -35,7 +35,7 @@ export default function Navigation() {
 
       {/* Navigation Links */}
       <ul
-        className={`absolute top-16 left-0 w-full bg-primary-950 md:relative md:flex md:flex-row md:gap-16 md:top-auto md:left-auto md:w-auto ${
+        className={`absolute top-16 right-0 bg-primary-950 md:w-auto md:relative md:flex md:flex-row md:gap-16 md:top-auto  md:right-auto ${
           isMenuOpen ? "block" : "hidden"
         }`}
       >
@@ -53,7 +53,7 @@ export default function Navigation() {
           <li key={link}>
             <Link
               href={`/${link}`}
-              className="block p-4 text-white hover:text-slate-700 transition-colors"
+              className="block p-4 text-white hover:text-accent-400 bg-slate-600 transition-colors md:bg-transparent"
               onClick={handleLinkClick}
             >
               Lord {link.charAt(0).toUpperCase() + link.slice(1)}
